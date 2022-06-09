@@ -1,10 +1,7 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/backsoul/doberman/pkg/services"
-	"gorm.io/driver/mysql"
+	"github.com/backsoul/doberman/internal/database"
 	"gorm.io/gorm"
 )
 
@@ -15,12 +12,6 @@ type Article struct {
 }
 
 func main() {
-
-	dsn := services.Get("DB")
-	fmt.Println(dsn)
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	if err != nil {
-		services.Log("failed to connect database", "Error")
-	}
+	db := database.InitDB()
 	db.AutoMigrate(&Article{})
 }

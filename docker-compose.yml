@@ -7,7 +7,7 @@ services:
       - 3333:3306
     environment:
       - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=home
+      - MYSQL_DATABASE=doberman
       - MYSQL_ROOT_USER=admin
       - MYSQL_PASSWORD=password
   phpmyadmin:
