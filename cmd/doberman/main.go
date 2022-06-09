@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	services.Log("HI")
+	services.Log("HI", "")
 }
