@@ -1,5 +1,10 @@
+### START
+```
+ docker-compose up -d
+```
 ### MIGRATE 
 ```
+docker exec -it doberman sh
 go run cmd/doberman/migrate/main.go
 ```
 ### TESTS
