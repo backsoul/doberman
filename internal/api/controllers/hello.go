@@ -1,10 +1,12 @@
 package controllers
 
 import (
+	"github.com/backsoul/doberman/pkg/services"
 	"github.com/gofiber/fiber/v2"
 )
 
 func Hello(cb *fiber.Ctx) error {
-
-	return cb.SendString("Hello, World!")
+	msg := cb.Query("message")
+	services.SendMessage(msg)
+	return cb.SendString(msg)
 }

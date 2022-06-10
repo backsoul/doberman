@@ -1,6 +1,32 @@
-version: "3"
+version: '2'
 
 services:
+  doberman-consumer:
+    container_name: doberman-consumer
+    build:
+      context: .
+      target: consumer
+    depends_on:
+      - rabbitmq
+  doberman:
+    container_name: doberman
+    build:
+      context: .
+      target: doberman
+    volumes:
+      - .:/doberman
+    ports:
+     - 3000:3000
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    restart: always
+    build: ./rabbitmq
+    hostname: rabbitmq
+    ports:
+     - "5672:5672"
+     - "15672:15672"
+    hostname: rabbitmq
   mysql:
     image: mysql:5.5
     ports:
@@ -22,3 +48,4 @@ services:
 
 volumes:
   mysql_data_db:
+
