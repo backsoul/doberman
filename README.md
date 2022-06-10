@@ -23,6 +23,10 @@ password: guess
 ```
 go run cmd/doberman/queue/consumer.go 
 ```
+### VIEW MESSAGES CONSUMER
+```
+docker logs -f doberman-consumer
+```
 ### QUEUE
 ```
 doberman.CreateArticle
