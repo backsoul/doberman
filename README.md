@@ -1,7 +1,8 @@
-### migrate 
-
+### MIGRATE 
+```
 go run cmd/doberman/migrate/main.go
-### test
+```
+### TESTS
 ```
 go test ./... -v
 ```
