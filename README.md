@@ -13,7 +13,7 @@ http://0.0.0.0:15672/
 user: guess
 password: guess
 ```
-#### consumer 
+### CONSUMER 
 ```
 go run cmd/doberman/queue/consumer.go 
 ```
