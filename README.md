@@ -9,6 +9,7 @@ go run cmd/doberman/migrate/main.go
 ```
 ### TESTS
 ```
+docker exec -it doberman sh
 go test ./... -v
 ```
 
