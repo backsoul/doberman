@@ -14,7 +14,7 @@ services:
       context: .
       target: doberman
     volumes:
-      - .:/doberman
+      - .:/app
     ports:
      - 3000:3000
     depends_on:
@@ -26,6 +26,7 @@ services:
     ports:
      - "5672:5672"
      - "15672:15672"
+    hostname: rabbitmq
   mysql:
     image: mysql:5.5
     ports:
